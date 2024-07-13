@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const Root = () => {
   return (
-    <div>
+    <div className="font-poppins container mx-auto py-8">
       <Outlet />
     </div>
   );

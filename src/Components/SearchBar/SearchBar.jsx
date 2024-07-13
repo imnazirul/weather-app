@@ -16,7 +16,7 @@ const SearchBar = ({ handleInputChange }) => {
 
   const loadCities = async (searchInput) => {
     const response = await fetch(
-      `${Api_Url}/cities?minPopulation=1000000&namePrefix=${searchInput}`,
+      `${Api_Url}/cities?namePrefix=${searchInput}`,
       options
     );
     const data = await response.json();
