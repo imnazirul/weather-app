@@ -12,7 +12,7 @@ const options = {
   },
 };
 const SearchBar = ({ handleInputChange }) => {
-  const [searchText, setSearchText] = useState(null);
+  const [searchText, setSearchText] = useState("null");
 
   const loadCities = async (searchInput) => {
     const response = await fetch(
