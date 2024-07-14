@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const DailyWeather = ({ weather }) => {
+const DailyForecastDetails = ({ weather }) => {
   const date = new Date(weather.dt_txt).toDateString();
   const time = new Date(weather.dt_txt).toLocaleTimeString();
 
@@ -70,4 +70,4 @@ const DailyWeather = ({ weather }) => {
   );
 };
 
-export default DailyWeather;
+export default DailyForecastDetails;

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import DailyWeather from "../DailyWeather/DailyWeather";
+import DailyForecastDetails from "../DailyForecastDetails/DailyForecastDetails";
 
 const openWeather_Api_key = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
 
@@ -33,7 +33,7 @@ const DailyForecast = ({ cityInfo }) => {
         Daily Weather Forecast
       </h1>
       {dailyWeather.map((weather) => (
-        <DailyWeather key={weather.dt} weather={weather} />
+        <DailyForecastDetails key={weather.dt} weather={weather} />
       ))}
     </div>
   );
