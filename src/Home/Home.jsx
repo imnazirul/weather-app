@@ -4,7 +4,7 @@ import SearchBar from "../Components/SearchBar/SearchBar";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Weather from "../Components/Weather/Weather";
-import HourlyWeather from "../Components/HourlyWeather/HourlyWeather";
+import DailyForecast from "../Components/DailyForecast/DailyForecast";
 
 const openWeather_Api_key = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
 
@@ -49,13 +49,15 @@ const Home = () => {
   }
 
   return (
-    <div className="flex justify-between gap-16">
-      <div className="lg:w-[60%] bg-blue-600 p-8 rounded-lg">
-        <SearchBar handleInputChange={handleOnChange} />
+    <div className="">
+      <div className=" bg-[#2b83e7] max-w-5xl mx-auto p-8 rounded-lg">
+        <div className="max-w-lg  mx-auto">
+          <SearchBar handleInputChange={handleOnChange} />
+        </div>
         <Weather WeatherData={WeatherData} city={city} />
       </div>
-      <div className="lg:w-[40%]">
-        <HourlyWeather cityInfo={cityInfo} />
+      <div className="">
+        <DailyForecast cityInfo={cityInfo} />
       </div>
     </div>
   );
