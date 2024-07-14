@@ -53,14 +53,14 @@ const Home = () => {
             <div className="max-w-lg  mx-auto">
               <SearchBar handleInputChange={handleOnChange} />
             </div>
-            <div className="font-poppins space-y-8 md:mt-10 mt-10 lg:space-y-12">
-              <div className="flex justify-between flex-col md:flex-row items-center max-md:gap-2 mt-6">
+            <div className="font-poppins space-y-8 md:mt-10 mt-7 lg:space-y-12">
+              <div className="flex justify-between flex-col md:flex-row items-center max-md:gap-2 ">
                 <p className=" skeleton w-52 h-6 lg:h-10"></p>
                 <p className=" skeleton w-52 h-6 lg:h-10"></p>{" "}
               </div>
-              <div className="flex justify-center  gap-24 items-center">
+              <div className="flex justify-center  gap-20 items-center">
                 <div className=" my-7 flex flex-col justify-center items-center">
-                  <div className=" w-14 h-14 lg:w-28 lg:h-28 bg-white rounded-full animate-ping"></div>
+                  <div className=" w-12 h-12 lg:w-24 lg:h-24 bg-white rounded-full animate-ping"></div>
 
                   <p className="skeleton w-24 lg:w-28 h-3 mx-auto lg:h-6  mt-4 md:mt-8"></p>
                 </div>
