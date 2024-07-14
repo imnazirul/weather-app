@@ -19,11 +19,10 @@ const WeatherDetails = ({ WeatherData }) => {
             {WeatherData.visibility / 1000} Km
           </span>
         </p>
-        <p className=" hidden lg:flex text-sm lg:text-xl bg-white rounded-lg px-2 py-2">
-          Pressure:{" "}
+        <p className=" hidden lg:flex text-sm lg:text-xl bg-white rounded-lg px-2 py-2 gap-1">
+          Pressure:
           <span className="font-semibold">
-            {" "}
-            {WeatherData.main.pressure} mbar
+            {WeatherData.main.pressure} mBar
           </span>
         </p>
         <p className="text-sm lg:text-xl bg-white rounded-lg px-2 py-2">
