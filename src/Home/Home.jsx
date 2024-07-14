@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Weather from "../Components/Weather/Weather";
 import DailyForecast from "../Components/DailyForecast/DailyForecast";
+import WeatherDetails from "../Components/WeatherDetails/WeatherDetails";
 
 const openWeather_Api_key = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
 
@@ -47,31 +48,45 @@ const Home = () => {
   return (
     <div className="">
       {isPending ? (
-        <div className=" bg-[#2b83e7] max-w-5xl mx-auto lg:h-[520px] p-8 rounded-lg">
-          <div className="max-w-lg  mx-auto">
-            <SearchBar handleInputChange={handleOnChange} />
-          </div>
-          <div className="font-poppins space-y-8 lg:space-y-12">
-            <div className="flex justify-between flex-col md:flex-row items-center max-md:gap-2 mt-6">
-              <p className=" skeleton w-52 h-6 lg:h-10"></p>
-              <p className=" skeleton w-52 h-6 lg:h-10"></p>{" "}
+        <div className="flex justify-center flex-col lg:flex-row">
+          <div className="lg:w-[65%] bg-[#2b83e7]  w-full  p-8 lg:rounded-l-lg max-lg:rounded-t-lg ">
+            <div className="max-w-lg  mx-auto">
+              <SearchBar handleInputChange={handleOnChange} />
             </div>
-            <div className="flex justify-center  gap-24 items-center">
-              <div className=" my-7 flex flex-col justify-center items-center">
-                <div className=" w-14 h-14 lg:w-28 lg:h-28 bg-white rounded-full animate-ping"></div>
+            <div className="font-poppins space-y-8 md:mt-10 mt-10 lg:space-y-12">
+              <div className="flex justify-between flex-col md:flex-row items-center max-md:gap-2 mt-6">
+                <p className=" skeleton w-52 h-6 lg:h-10"></p>
+                <p className=" skeleton w-52 h-6 lg:h-10"></p>{" "}
+              </div>
+              <div className="flex justify-center  gap-24 items-center">
+                <div className=" my-7 flex flex-col justify-center items-center">
+                  <div className=" w-14 h-14 lg:w-28 lg:h-28 bg-white rounded-full animate-ping"></div>
 
-                <p className="skeleton w-24 lg:w-28 h-3 mx-auto lg:h-6  mt-4 md:mt-8"></p>
+                  <p className="skeleton w-24 lg:w-28 h-3 mx-auto lg:h-6  mt-4 md:mt-8"></p>
+                </div>
+                <div className="flex justify-center ">
+                  <h1 className="skeleton w-20 h-20 lg:w-32 lg:h-32 rounded-full"></h1>
+                  <sup className="text-2xl lg:text-5xl text-white font-semibold">
+                    °C
+                  </sup>
+                </div>
               </div>
-              <div className="flex justify-center ">
-                <h1 className="skeleton w-20 h-20 lg:w-32 lg:h-32 rounded-full"></h1>
-                <sup className="text-2xl lg:text-5xl text-white font-semibold">
-                  °C
-                </sup>
+              <div className="flex justify-between flex-col md:flex-row max-md:gap-2 items-center mt-8">
+                <p className="skeleton w-40  lg:w-52 h-5 lg:h-10"></p>
+                <p className="skeleton w-40 lg:w-52 h-5 lg:h-10"></p>
               </div>
             </div>
-            <div className="flex justify-between flex-col md:flex-row max-md:gap-2 items-center mt-8">
-              <p className="skeleton w-40  lg:w-52 h-5 lg:h-10"></p>
-              <p className="skeleton w-40 lg:w-52 h-5 lg:h-10"></p>
+          </div>
+          <div className="bg-[#d3e7fc] lg:w-[35%] lg:p-8 p-4 max-lg:rounded-b-lg lg:rounded-r-lg">
+            <h1 className="text-2xl lg:text-4xl font-semibold text-center text-blue-500 ">
+              Current Weather
+            </h1>
+            <div className="space-y-4  lg:space-y-4 mt-4 lg:mt-8 ">
+              <p className="animate-pulse rounded-lg w-full bg-white h-8 lg:h-12  "></p>
+              <p className="animate-pulse rounded-lg w-full bg-white h-8 lg:h-12  "></p>{" "}
+              <p className="animate-pulse rounded-lg w-full bg-white h-8 lg:h-12  "></p>{" "}
+              <p className="animate-pulse rounded-lg w-full bg-white h-8 lg:h-12  "></p>{" "}
+              <p className="hidden lg:flex animate-pulse rounded-lg w-full bg-white h-8 lg:h-12  "></p>{" "}
             </div>
           </div>
         </div>
@@ -96,12 +111,17 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <div className=" bg-[#2b83e7] max-w-5xl mx-auto p-8 rounded-lg">
-          <div className="max-w-lg  mx-auto">
-            <SearchBar handleInputChange={handleOnChange} />
-          </div>
+        <div className="  flex justify-center flex-col lg:flex-row">
+          <div className="lg:w-[65%] w-full bg-[#2b83e7]  p-8 mx-auto  lg:rounded-l-lg max-lg:rounded-t-lg">
+            <div className="max-w-lg  mx-auto">
+              <SearchBar handleInputChange={handleOnChange} />
+            </div>
 
-          <Weather WeatherData={WeatherData} city={city} />
+            <Weather WeatherData={WeatherData} city={city} />
+          </div>
+          <div className="lg:w-[35%] bg-[#d3e7fc] max-lg:rounded-b-lg lg:rounded-r-lg p-4 lg:p-8">
+            <WeatherDetails WeatherData={WeatherData} />
+          </div>
         </div>
       )}
       <div className="">

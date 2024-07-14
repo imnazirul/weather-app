@@ -75,7 +75,7 @@ const DailyForecastDetails = ({ weather }) => {
                   {weather.rain["3h"]} CM <sup>3</sup>
                 </>
               ) : (
-                "Not Available"
+                "No Rain"
               )}
             </p>
           </div>
