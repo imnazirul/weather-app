@@ -29,7 +29,7 @@ const DailyForecast = ({ cityInfo }) => {
   }
   return (
     <div className=" max-w-6xl mx-auto">
-      <h1 className="text-4xl font-semibold text-center mt-4">
+      <h1 className="text-2xl lg:text-4xl font-semibold text-center mt-4">
         Daily Weather Forecast
       </h1>
       {dailyWeather.map((weather) => (
