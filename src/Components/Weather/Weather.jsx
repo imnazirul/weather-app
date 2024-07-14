@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
-
 import { FaTemperatureHalf } from "react-icons/fa6";
 import { TbLocation } from "react-icons/tb";
 
 /* eslint-disable no-unused-vars */
 const Weather = ({ WeatherData, city }) => {
   return (
-    <div className="font-poppins space-y-8 lg:space-y-12">
+    <div className="font-poppins space-y-8 lg:space-y-12 lg:h-[400px]">
       <div className="flex justify-between flex-col md:flex-row items-center mt-6">
-        <p className=" lg:text-3xl justify-center  text-center font-semibold text-white flex gap-1">
+        <p className="text-lg lg:text-3xl justify-center  text-center font-semibold text-white flex gap-1">
           <TbLocation /> {city}
         </p>
         <p className="text-lg lg:text-3xl font-semibold text-white items-center flex gap-1">
@@ -23,7 +22,7 @@ const Weather = ({ WeatherData, city }) => {
             src={`/weathericons/${WeatherData.weather[0].icon}.png`}
             alt="weatherIcon"
           />
-          <p className="text-white uppercase lg:text-xl font-bold">
+          <p className="text-white text-center text-sm uppercase lg:text-xl font-bold">
             {WeatherData.weather[0].description}
           </p>
         </div>

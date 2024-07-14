@@ -10,8 +10,17 @@ const DailyForecastDetails = ({ weather }) => {
         <div className="collapse-title ">
           <div className="flex items-center justify-between">
             <p className="flex gap-1 flex-col md:flex-row">
-              <span> {date} </span>
-              <span>{time}</span>
+              {date === new Date().toDateString() ? (
+                <>
+                  <span> Today </span>
+                  <span>{time}</span>
+                </>
+              ) : (
+                <>
+                  <span> {date} </span>
+                  <span>{time}</span>
+                </>
+              )}
             </p>
             <span className="uppercase hidden md:flex">
               {weather.weather[0].description}
@@ -31,25 +40,31 @@ const DailyForecastDetails = ({ weather }) => {
         </div>
         <div className="collapse-content">
           <div className="grid grid-cols-2  md:grid-cols-3 gap-2 lg:gap-4 justify-between">
-            <p>Cloud Cover: {weather.clouds.all} % </p>
-            <p>Humidity: {weather.main.humidity} %</p>
-            <p>
+            <p className="max-md:text-sm">
+              Cloud Cover: {weather.clouds.all} %{" "}
+            </p>
+            <p className="max-md:text-sm">
+              Humidity: {weather.main.humidity} %
+            </p>
+            <p className="max-md:text-sm">
               Temperature: {Math.round(weather.main.temp)}
               <sup>°C</sup>
             </p>
-            <p>
-              Feels Like: {Math.round(weather.main.feels_like)} <sup>°C</sup>
+            <p className="max-md:text-sm">
+              Feels Like: {Math.round(weather.main.feels_like)}
+              <sup>°C</sup>
             </p>
-            <p>Visibility: {Math.round(weather.visibility / 1000)} Km </p>
-            <p>
-              Wind Speed: {Math.round((weather.wind.speed * 3600) / 1000)}
-              Km/h{" "}
+            <p className="max-md:text-sm">
+              Visibility: {Math.round(weather.visibility / 1000)} Km{" "}
             </p>
-            <p>
+            <p className="max-md:text-sm">
+              Wind Speed: {Math.round((weather.wind.speed * 3600) / 1000)} Km/h{" "}
+            </p>
+            <p className="max-md:text-xs">
               Min Temperature: {Math.round(weather.main.temp_min)}
               <sup>°C</sup>
             </p>
-            <p>
+            <p className="max-md:text-xs">
               Max Temperature: {Math.round(weather.main.temp_max)}
               <sup>°C</sup>
             </p>
